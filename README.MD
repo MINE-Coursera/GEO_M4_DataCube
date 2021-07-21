@@ -1,35 +1,41 @@
 # Despliegue del Open Data Cube 1.8.2
 
-El [Open Data Cube](https://www.opendatacube.org/) proporciona un entorno que facilita el análisis de datos de observación de la tierra mediante el lenguaje de programación Python. Los pasos que se listan a continaución nos permitirán desplegar el ambiente dle Open Data Cube para inicar el proceso de análisis de imágenes satelitales.
+El [Open Data Cube](https://www.opendatacube.org/) proporciona un entorno que facilita el análisis de datos de observación de la tierra mediante el lenguaje de programación Python. Los pasos que se listan a continuación despliegan el ambiente del Open Data Cube para inicar el proceso de análisis de imágenes satelitales.
+
+**Nota importante**
+El cubo de datos que vamos a usar está instalado en una máquina virtual con sistema operacional Linux que vamos a acceder desde Windows.
 
 ## Requerimientos
 
 1. Computador con mímino 8 GB de Memoria RAM.
 2. Sistema Operativo Windows 10
-3. Descarge las imágenes Sentinel 2 disponibles en el siguiente [link](https://drive.google.com/drive/folders/1eNWlKCcia3FsnhFA7k61m3pnkFp3OiF6?usp=sharing) antes de continuar el proceso.
+3. Descarge las imágenes Sentinel 2 disponibles en el siguiente [enlace](https://drive.google.com/drive/folders/1eNWlKCcia3FsnhFA7k61m3pnkFp3OiF6?usp=sharing) antes de continuar el proceso.
 
 ## Pasos de configuración
 
-Para automatizar el despliegue del open data cube de tal forma que el usuario no tenga la necesidad de entrar en detalles técnico, vamos a usar Virtualbox y Vagrant. 
+El despliegue automatizado del Open Data Cube sin necesidad de entrar en detalles técnicos utiliza las herramientas Virtualbox y Vagrant. 
 
-1. Descargue e instale la herramienta [Virtualbox 6.1.18](https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1.18-142142-Win.exe).
-2. Descargue e instale la herramienta [Vagrant 2.2.15](https://releases.hashicorp.com/vagrant/2.2.15/vagrant_2.2.15_x86_64.msi)
-3. Reinicie su computadora.
+1. Descargue e instale la herramienta [Virtualbox 6.1.22](https://download.virtualbox.org/virtualbox/6.1.22/VirtualBox-6.1.22-144080-Win.exe).
+2. Descargue e instale la herramienta [Vagrant 2.2.17](https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_x86_64.msi)
+3. Reinicie su computador.
 
 ## Pasos de instalación del Open Data Cube 
 
-Una vez instaladas las herrameintas Virtualbox y Vagrant continue con los siguientes pasos.
+Una vez instaladas las herramientas Virtualbox y Vagrant continue con los siguientes pasos.
 
-1. Descarge el siguiente archivo [datacube-tutorial-main.zip](https://github.com/DonAurelio/datacube-tutorial/archive/refs/heads/main.zip).
-2. Descomprima el archivo `datacube-tutorial-main.zip` en el Escritorio. Al descomprimir el archivo se creará la carpeta `datacube-tutorial-main`. Ingrese a este dierctorio.
-3. Estando ubicando en el dierctorio `datacube-tutorial-main`, precione la tecla **shift + click derecho**, en el menú contextual seleccione "Abrir la ventana de PowerShell aquí".
-4. En la consola de PowerShell que se desplegada en el paso anterior, digitar el siguiente comando. **NOTA: Este comando debe ser ejecutado sólo una vez.**
+0. Cree un directorio para alojar el Open Data Cube en una unidad con suficiente espacio y ponerle un nombre corto, diciente y sin caracteres especiales (Se sugiere algo del estilo D:\DataCube)
+1. Descarge el siguiente archivo [datacube-tutorial-main.zip](https://github.com/MINE-Coursera/GEO_M4_DataCube/archive/refs/heads/main.zip) en el directorio creado para este efecto.
+2. Descomprima el archivo `datacube-tutorial-main.zip`. Al descomprimir el archivo se creará la carpeta `datacube-tutorial-main`. Ingrese a este directorio.
+3. Estando ubicando en el directorio `datacube-tutorial-main`, presione la tecla **shift + click derecho**, en el menú contextual seleccione "Abrir la ventana de PowerShell aquí".
+4. En la consola de PowerShell que se despliega, digitar el siguiente comando.
 
 ```bash 
 vagrant up
 ```
 
-El comando anterior realizará el despliegue del Open Data Cube. La primera vez que se ejecuta el comando toma al rededor de 20 a 30 minutos, dependiendo de la velocidad de descarga de la red de su computador. En el proceso de ejecución del comando podrá observar información del estado de despliege de la herramientas Open Data Cube.
+Este comando realiza el despliegue del Open Data Cube. La primera vez que se ejecuta el comando puede tomar Hasta 20 a 30 minutos, dependiendo de la velocidad de descarga de la red de su computador. 
+
+En el proceso de ejecución del comando se puede observar información del estado de despliege de la herramientas Open Data Cube (Nota: Algunos mensajes pueden cambiar, sobre todo los que se refieren a los números de versión de las herramientas utilizadas).
 
 ```bash
 Bringing machine 'default' up with 'virtualbox' provider...
@@ -64,7 +70,7 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: done
 ```
 
-Al finalizar el proceso de despliegue, usted deberá verificar en su consola de PowerShell que la última parte de la información desplegada sea similar a la que se muestra a continuación. Si no fue así entonces solicite asistencia.
+Al finalizar el proceso de despliegue, debe verificar en su consola de PowerShell que la última parte de la información desplegada sea similar a la que se muestra a continuación. Si no fue así entonces solicite asistencia.
 
 ```bash 
     default: Initialising schema
@@ -76,13 +82,11 @@ Al finalizar el proceso de despliegue, usted deberá verificar en su consola de 
     default: done
 ```
 
-Si el despliegue ha sido exitoso, abra el navegador de su preferencias (Google Chrome o Mozila Firefox) e ingrese al siguiente enlace [http://localhost:8080/lab](http://localhost:8080/lab). Podrá visualizar en el navegador la interfa gráfica de JupyterLab. Jupyterlab es el ambiente que nos permitirá desarrollar algoritmos que consulten el cubo de datos y nos permitan ejecutar análisis sobre las imágenes obtenidas a partir de una consulta. 
+**Los pasos 3 y 4 deben ejecutarse cada vez que se quiera trabajar con el cubo de datos.**
 
-## Comandos útiles de vagrant
+Una vez instalada la máquina virtual, este proceso es mucho más rápido.
 
-En el momento en que ejecutaste `vagrant up` creaste una máquina virtual con el ambiente requerido para trabajar con el cubo de datos. Una vez termines de trabajar en el cubo de datos, debes detener la máquina virtual usando el comando `vagrant halt` esto va a evitar que ésta máquina se siga ejecutando y consuma recursos de tu computador. Cuando la vulevas a necesitar, puedes inicarla de nuevo con el comando `vagrant up`. Recuerda que para ejecutar estos comandos debes tener una consola de PowerShell abierta desde el directorio `datacube-tutorial-main`. Finalmente puedes eliminar la máquina virtual usando el comando `vagrant destroy`, cuando consideres que no requieres usarla de nuevo. Por supuesto, puedes eventualmente crear de nuevo la máquina usando el comando `vagrant up`.
-
-## Solución posibles problemas
+## Solución a posibles problemas
 
 **Si al final del despliegue obtiene un error similar al que se muestra a continuación.**
 
@@ -95,6 +99,27 @@ Ingrese a `C:\Users\<su nombre de usuario>\`, busque el directorio `.vagrant.d` 
 Referencias:
 1. https://github.com/hashicorp/vagrant/issues/10657
 2. https://www.gitmemory.com/issue/hashicorp/vagrant/9146/541988622
+
+## Acceso al Open Data Cube
+
+En este momento, la máquina virtual que contiene el cubo está instalada y prendida.
+
+Para acceder a cubo, vamos a utilizar una herramienta WEB llamada JupyterLab, con la cual, mediante notebooks (cuadernos de trabajo) podemos dar las instrucciones de manejo de las imágenes de satélite que requiramos.
+
+Para esto, abra el navegador de su preferencias (Google Chrome o Mozila Firefox) e ingrese al siguiente enlace [http://localhost:8080/lab](http://localhost:8080/lab). En el navegador aparece la interfaz gráfica de JupyterLab. Jupyterlab es el ambiente que nos permite entende4r y desarrollar algoritmos que consultan el cubo de datos y nos permiten ejecutar análisis sobre las imágenes obtenidas a partir de una consulta. 
+
+## Apagar la máquina virtual que contiene el Open Data Cube
+
+Una vez se termine de trabajar con el cubo de datos, es necesario apagar la máquina virtual, pues está consumiendo recursos (memoria principal, procesador y red) de la máquina real y esto puede afectar el funcionamiento de la misma. Para esto:
+
+1. En la ventana Power Shell, dar el comando `vagrant halt`.
+
+## Borrar/destruir la máquina virtual que contiene el Open Data Cube
+
+Finalmente cuando ya no se quiera más trabajar con el cubo, se puede borrar la máquina virtual usando el comando `vagrant destroy` en la ventana de Power shell.
+
+Si en algún momento se requiere de nuevo, sólo hay que repetir el proceso mostrado, creando de nuevo la máquina virtual con el comando `vagrant up`.
+
 
 ## Agradecimientos
 
