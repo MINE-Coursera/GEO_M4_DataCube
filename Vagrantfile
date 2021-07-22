@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "donaurelio/datacube"
-  config.vm.box_version = "1"
+  config.vm.box = "geouniandes/GEO_M4_Datacube"
+  config.vm.box_version = "1.0"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
