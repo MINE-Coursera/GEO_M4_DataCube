@@ -8,7 +8,7 @@ El cubo de datos que vamos a usar está instalado en una máquina virtual con si
 ## Requerimientos
 
 1. Computador con mímino 8 GB de Memoria RAM.
-2. Sistema Operativo Windows 10
+2. Sistema Operativo Windows 10.
 3. Descarge las imágenes Sentinel 2 disponibles en el siguiente [enlace](https://drive.google.com/drive/folders/1eNWlKCcia3FsnhFA7k61m3pnkFp3OiF6?usp=sharing) antes de continuar el proceso.
 
 ## Pasos de configuración
