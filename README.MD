@@ -106,7 +106,9 @@ En este momento, la máquina virtual que contiene el cubo está instalada y pren
 
 Para acceder a cubo, vamos a utilizar una herramienta WEB llamada JupyterLab, con la cual, mediante notebooks (cuadernos de trabajo) podemos dar las instrucciones de manejo de las imágenes de satélite que requiramos.
 
-Para esto, abra el navegador de su preferencias (Google Chrome o Mozila Firefox) e ingrese al siguiente enlace [http://localhost:8080/lab](http://localhost:8080/lab). En el navegador aparece la interfaz gráfica de JupyterLab. Jupyterlab es el ambiente que nos permite entende4r y desarrollar algoritmos que consultan el cubo de datos y nos permiten ejecutar análisis sobre las imágenes obtenidas a partir de una consulta. 
+Para esto, abra el navegador de su preferencias (Google Chrome o Mozila Firefox) e ingrese al siguiente enlace **[http://localhost:8080/lab](http://localhost:8080/lab).**
+
+En el navegador aparece la interfaz gráfica de JupyterLab. JupyterLab es el ambiente que nos permite entender y desarrollar algoritmos que consultan el cubo de datos y nos permiten ejecutar análisis sobre las imágenes obtenidas a partir de esa consulta. 
 
 ## Apagar la máquina virtual que contiene el Open Data Cube
 
