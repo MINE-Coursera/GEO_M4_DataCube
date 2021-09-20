@@ -13,11 +13,13 @@ El cubo de datos que vamos a usar está instalado en una máquina virtual con si
 
 ## Pasos de configuración
 
-El despliegue automatizado del Open Data Cube sin necesidad de entrar en detalles técnicos utiliza las herramientas Virtualbox y Vagrant. 
+El despliegue automatizado del Open Data Cube sin necesidad de entrar en detalles técnicos utiliza las herramientas Virtualbox 6.1.22 (o superior) y Vagrant 2.2.17 (o superior). 
 
 1. Descargue e instale la herramienta [Virtualbox 6.1.22](https://download.virtualbox.org/virtualbox/6.1.22/VirtualBox-6.1.22-144080-Win.exe).
 2. Descargue e instale la herramienta [Vagrant 2.2.17](https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_x86_64.msi)
 3. Reinicie su computador.
+
+**Nota:** Las últimas versiones de estas herramientas las consiguen en `https://download.virtualbox.org/virtualbox` y `https://releases.hashicorp.com/vagrant/`, respectivamente.
 
 ## Pasos de instalación del Open Data Cube 
 
